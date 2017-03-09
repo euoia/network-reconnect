@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+echo "Deploying..."
+
+# Config -----------------
+REMOTE_BASE="~/network-reconnect"
+REMOTE_SERVER="pubpi"
+
+# Script  ----------------
+RSYNC_FLAGS_UP="-i --compress --recursive --copy-links --update --exclude '*.swp' --exclude '*.swo' --exclude original-assets --exclude .git --exclude assets"
+
+# Modify this if the upload script moves relative to the project directory.
+PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $PROJECT_DIR
+
+# Upload changes.
+rsync $RSYNC_FLAGS_UP $PROJECT_DIR/ ${REMOTE_SERVER}:${REMOTE_BASE}

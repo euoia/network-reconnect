@@ -1,0 +1,11 @@
+# systemd service file for temperature-monitor
+
+[Unit]
+Description=A service that reconnects the network connection.
+Documentation=https://github.com/euoia/network-reconnect
+
+[Service]
+Type=oneshot
+ExecStart=/home/pi/network-reconnect/network-reconnect.sh
+User=root
+Group=root
