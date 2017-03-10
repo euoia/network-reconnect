@@ -2,7 +2,7 @@
 
 LOG_FILE=/var/log/network-reconnect/network-reconnect.log
 
-LOG_FILE_SIZE=$(du --bytes ../temperature-monitor/log.js | awk '{print $1}')
+LOG_FILE_SIZE=$(du --bytes $LOG_FILE | awk '{print $1}')
 
 if (( $LOG_FILE_SIZE > 1000000 )); then
 	rm $LOG_FILE
