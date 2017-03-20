@@ -19,3 +19,8 @@ To see timers:
 systemctl list-timers
 ```
 
+To see the log from the service:
+
+```
+sudo journalctl -u network-reconnect.service
+```
