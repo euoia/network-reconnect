@@ -8,7 +8,7 @@ if [ $? -ne 0 ]; then
 	service networking stop
 	service networking start
 	dhclient -r
-	iwconfig wlan0 essit "Green Dragon Free WiFi"
+	iwconfig wlan0 essid "Green Dragon Free WiFi"
 	dhclient wlan0
 else
 	echo "$(date) No problem detected."
