@@ -4,7 +4,7 @@ set -e
 ping -c 3 -W 10 8.8.8.8 >/dev/null
 
 if [ $? -ne 0 ]; then
-	echo "$(date) Internet problem detected, restarting network-manager."
+	echo "$(date) Internet problem detected, restarting network connection."
 	service networking stop
 	service networking start
 	dhclient -r
