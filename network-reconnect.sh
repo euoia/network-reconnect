@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -x
 
 ping -c 3 -W 10 8.8.8.8 >/dev/null
 
